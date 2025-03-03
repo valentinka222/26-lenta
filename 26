@@ -1,0 +1,19 @@
+# 26-lenta
+a1 = [list(map(int, i.split())) for i in f]
+a = sorted([a1[i] + [i+1] for i in range(len(a1))])
+a_start = []
+a_end = []
+c = 0
+for i in range(len(a)):
+    if a[i][2] == 895:
+        break
+    if a[i][0] < a[i][1]:
+        a_start.append(a[i])
+        c += 1
+    else:
+        a_end.append(a[i])
+print(c)
+r = a_start + a_end[::-1]
+print(a_start)
+print(a_end)
+
